@@ -80,7 +80,7 @@ def configure_driver():
     options.add_argument("--height=1080")
     return webdriver.Firefox(service=Service(GECKODRIVER_PATH), options=options)
 
-def perform_login(driver, username="jno", password="G$qv6T9q9s_fqApjLNP?"):
+def perform_login(driver, username="", password=""):
     print(f"{Colors.HEADER}[*] Logging in as {username}...{Colors.ENDC}")
     driver.get(LOGIN_URL)
     WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "edit-name")))
